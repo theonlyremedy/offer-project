@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Visual Studio Projects\\GitHub\\OfferProject\\OfferConsole\\OfferConsole.csproj",
+      "projectUniqueName": "G:\\Visual Studio Projects\\GitHub\\offer-project\\OfferConsole\\OfferConsole.csproj",
       "projectName": "OfferConsole",
-      "projectPath": "G:\\Visual Studio Projects\\GitHub\\OfferProject\\OfferConsole\\OfferConsole.csproj",
+      "projectPath": "G:\\Visual Studio Projects\\GitHub\\offer-project\\OfferConsole\\OfferConsole.csproj",
       "packagesPath": "C:\\Users\\ramku\\.nuget\\packages\\",
-      "outputPath": "G:\\Visual Studio Projects\\GitHub\\OfferProject\\OfferConsole\\obj\\",
+      "outputPath": "G:\\Visual Studio Projects\\GitHub\\offer-project\\OfferConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
