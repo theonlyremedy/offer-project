@@ -26,7 +26,10 @@ namespace OfferConsole
         {
             CartItem cartItem = CartItems.FirstOrDefault(x => x.Product.Label == product.Label);
             if (cartItem == null)
+            {
                 cartItem = new CartItem(product);
+                CartItems.Add(cartItem);
+            }
             else
                 cartItem.Quantity++;
         }

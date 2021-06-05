@@ -18,6 +18,7 @@ namespace OfferTest
             Assert.IsFalse(cart.IsEmpty);
         }
 
+        [TestMethod]
         public void AddItemToCart()
         {
             Cart cart = new Cart(promoEngine);
@@ -27,6 +28,7 @@ namespace OfferTest
             Assert.IsNotNull(productFromCart);
         }
 
+        [TestMethod]
         public void CheckItemQuantity()
         {
             Cart cart = new Cart(promoEngine);
@@ -41,6 +43,7 @@ namespace OfferTest
             Assert.AreEqual(2, cartItem.Quantity);
         }
 
+        [TestMethod]
         public void CheckItemValue()
         {
             Cart cart = new Cart(promoEngine);
@@ -54,6 +57,21 @@ namespace OfferTest
             CartItem cartItem = cart.CartItems.Where(x => x.Product.Label == product.Label).FirstOrDefault();
 
             Assert.AreEqual(2 * cartItem.Product.UnitPrice, cartItem.SellingPrice);
+        }
+
+        [TestMethod]
+        public void CheckSellingPriceAfterOffer()
+        {
+            Cart cart = new Cart(promoEngine);
+
+            Product product = ProductFactory.Instance.Create("B");
+            cart.AddItem(product);
+
+            Product product2 = ProductFactory.Instance.Create("B");
+            cart.AddItem(product2);
+
+            CartItem cartItem = cart.CartItems.Where(x => x.Product.Label == product.Label).FirstOrDefault();
+            Assert.AreEqual(45, cart.CartValue);
         }
     }
 }
