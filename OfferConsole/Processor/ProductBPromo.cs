@@ -27,14 +27,13 @@ namespace OfferConsole
                 return;
             else
             {
-                CartItem promoItem = cartItems.Where(x => x.Product.Label == Const.PromoProductLabel && !x.OfferApplied).FirstOrDefault();
+                CartItem promoItem = cartItems.Where(x => x.Product.Label == Const.PromoProductLabel).FirstOrDefault();
                 if (promoItem == null)
                     return;
 
                 int promoQuantity = promoItem.Quantity / Const.PromoQuantity;
                 int nonPromoQuantity = promoItem.Quantity % Const.PromoQuantity;
                 int sellingPrice = (promoQuantity * Const.PromoPrice) + (nonPromoQuantity * promoItem.Product.UnitPrice);
-                promoItem.OfferApplied = true;
                 promoItem.SellingPrice = sellingPrice;
             }
         }

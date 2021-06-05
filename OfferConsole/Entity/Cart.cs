@@ -20,12 +20,15 @@ namespace OfferConsole
         /// </summary>
         public List<CartItem> CartItems { get; private set; }
 
+        private bool IsUpdated { get; set; }
+
         /// <summary>
         /// Cart Value after all Promotion Applied
         /// </summary>
         public int CartValue {
             get {
-                promoEngine.ApplyPromo(CartItems);
+                if(!IsUpdated)
+                    promoEngine.ApplyPromo(CartItems);
                 return CartItems.Sum(x => x.SellingPrice);
             }
         }
@@ -56,6 +59,17 @@ namespace OfferConsole
             }
             else
                 cartItem.Quantity++;
+
+            IsUpdated = false;
+        }
+
+        /// <summary>
+        /// Applies Promotions on the Cart
+        /// </summary>
+        public void ApplyPromo()
+        {
+            if (!IsUpdated)
+                promoEngine.ApplyPromo(CartItems);
         }
         #endregion
     }

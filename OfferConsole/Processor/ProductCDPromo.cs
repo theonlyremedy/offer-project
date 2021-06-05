@@ -29,8 +29,8 @@ namespace OfferConsole
                 return;
             else
             {
-                CartItem promoItem_C = cartItems.Where(x => x.Product.Label == Const.PromoProductLabel_C && !x.OfferApplied).FirstOrDefault();
-                CartItem promoItem_D = cartItems.Where(x => x.Product.Label == Const.PromoProductLabel_D && !x.OfferApplied).FirstOrDefault();
+                CartItem promoItem_C = cartItems.Where(x => x.Product.Label == Const.PromoProductLabel_C).FirstOrDefault();
+                CartItem promoItem_D = cartItems.Where(x => x.Product.Label == Const.PromoProductLabel_D).FirstOrDefault();
 
                 if (promoItem_C == null && promoItem_D == null)
                     return;
@@ -41,7 +41,6 @@ namespace OfferConsole
                 {
                     int nonPromoQuantity_C = promoItem_C.Quantity- promoQuantity;
                     int sellingPrice_C = ((promoQuantity * Const.PromoPrice) / 2) + (nonPromoQuantity_C * promoItem_C.Product.UnitPrice);
-                    promoItem_C.OfferApplied = true;
                     promoItem_C.SellingPrice = sellingPrice_C;
                 }
 
@@ -49,7 +48,6 @@ namespace OfferConsole
                 {
                     int nonPromoQuantity_D = promoItem_D.Quantity - promoQuantity;
                     int sellingPrice_D = ((promoQuantity * Const.PromoPrice) / 2) + (nonPromoQuantity_D * promoItem_D.Product.UnitPrice);
-                    promoItem_D.OfferApplied = true;
                     promoItem_D.SellingPrice = sellingPrice_D;
                 }
             }
