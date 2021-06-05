@@ -11,7 +11,7 @@ namespace OfferTest
         {
             PromoEngine promoEngine = new PromoEngine();
             Cart cart = new Cart(promoEngine);
-            Product product = ProductFactory.Create("A");
+            Product product = ProductFactory.Instance.Create("A");
             cart.AddItem(product);
             Assert.IsFalse(cart.IsEmpty);
         }

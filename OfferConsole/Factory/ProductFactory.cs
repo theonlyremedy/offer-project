@@ -3,21 +3,29 @@ using System.Collections.Generic;
 
 namespace OfferConsole
 {
+    // Temp Fake Repo for Generating products
     public class ProductFactory
     {
-        private List<Product> productTypes;
+        public static ProductFactory Instance = new ProductFactory();
+        private Dictionary<string, int> productValues;
         
-        public ProductFactory()
+        private ProductFactory()
         {
-            productTypes = new List<Product>()
+            productValues = new Dictionary<string, int>()
             {
-
+                { "A", 50 },
+                { "B", 30 },
+                { "C", 20 },
+                { "D", 15 }
             };
         }
 
-        public static Product Create(string v)
+        public Product Create(string type)
         {
-            throw new NotImplementedException();
+            if (!productValues.ContainsKey(type))
+                throw new ArgumentOutOfRangeException("Unknown Product");
+
+            return new Product(type, productValues[type]);
         }
     }
 }
