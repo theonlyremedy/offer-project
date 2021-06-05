@@ -1638,6 +1638,9 @@
       "OfferConsole/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "System.Collections": "4.3.0"
+        },
         "compile": {
           "bin/placeholder/OfferConsole.dll": {}
         },

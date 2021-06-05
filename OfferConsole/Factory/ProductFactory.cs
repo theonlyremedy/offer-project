@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace OfferConsole
 {
@@ -12,6 +13,11 @@ namespace OfferConsole
             {
 
             };
+        }
+
+        public static Product Create(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

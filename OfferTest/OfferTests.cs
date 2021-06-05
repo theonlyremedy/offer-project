@@ -9,9 +9,11 @@ namespace OfferTest
         [TestMethod]
         public void TestIsCartEmpty()
         {
-            Cart cart = new Cart();
+            PromoEngine promoEngine = new PromoEngine();
+            Cart cart = new Cart(promoEngine);
             Product product = ProductFactory.Create("A");
-            cart.Add()
+            cart.AddItem(product);
+            Assert.IsFalse(cart.IsEmpty);
         }
     }
 }
