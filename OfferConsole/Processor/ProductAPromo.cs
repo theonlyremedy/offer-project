@@ -3,8 +3,14 @@ using System.Linq;
 
 namespace OfferConsole
 {
+    /// <summary>
+    /// Product A Promo Class
+    /// </summary>
     class ProductAPromo : IPromo
     {
+        /// <summary>
+        /// Constant Values
+        /// </summary>
         private struct Const
         {
             public static readonly int PromoPrice = 130;
@@ -12,6 +18,9 @@ namespace OfferConsole
             public static readonly string PromoProductLabel = "A";
         }
 
+        /// <summary>
+        /// Process Promo on CartItemsList
+        /// </summary>
         public void ProcessCart(List<CartItem> cartItems)
         {
             if (cartItems == null || cartItems.Count == 0)

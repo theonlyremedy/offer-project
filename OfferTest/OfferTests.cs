@@ -7,8 +7,11 @@ namespace OfferTest
     [TestClass]
     public class OfferTests
     {
+        #region Field
         PromoEngine promoEngine = new PromoEngine();
+        #endregion
 
+        #region TestMethod
         [TestMethod]
         public void TestIsCartEmpty()
         {
@@ -73,5 +76,6 @@ namespace OfferTest
             CartItem cartItem = cart.CartItems.Where(x => x.Product.Label == product.Label).FirstOrDefault();
             Assert.AreEqual(45, cart.CartValue);
         }
+        #endregion
     }
 }

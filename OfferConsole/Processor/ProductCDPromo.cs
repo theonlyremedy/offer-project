@@ -4,8 +4,14 @@ using System.Linq;
 
 namespace OfferConsole
 {
+    /// <summary>
+    /// Product C & D Promo Class
+    /// </summary>
     class ProductCDPromo : IPromo
     {
+        /// <summary>
+        /// Constant
+        /// </summary>
         private struct Const
         {
             public static readonly int PromoPrice = 30;
@@ -14,6 +20,9 @@ namespace OfferConsole
             public static readonly string PromoProductLabel_D = "D";
         }
 
+        /// <summary>
+        /// Process Promo on CartItemsList
+        /// </summary>
         public void ProcessCart(List<CartItem> cartItems)
         {
             if (cartItems == null || cartItems.Count == 0)

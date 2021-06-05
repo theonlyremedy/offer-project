@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace OfferConsole
 {
+    /// <summary>
+    /// Interface for Promo
+    /// </summary>
     public interface IPromo
     {
+        /// <summary>
+        /// Process Promo on CartItems
+        /// </summary>
         void ProcessCart(List<CartItem> cartItems);
     }
 }
