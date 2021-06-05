@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace OfferConsole.Processor
 {
-    interface IPromo
+    public interface IPromo
     {
+        void ProcessCart(List<CartItem> cartItems);
     }
 }
