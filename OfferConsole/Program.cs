@@ -46,6 +46,45 @@ namespace OfferConsole
 
             cart.AddItem(productA);
             PrintCartItems(cart);
+
+            Console.WriteLine("Test Cases from PDF");
+
+            Console.WriteLine($"\r\nCreating New Cart..");
+            cart = new Cart(promoEngine);
+            cart.AddItem(productA);
+            cart.AddItem(productB);
+            cart.AddItem(productC);
+            PrintCartItems(cart);
+
+            Console.WriteLine($"\r\nCreating New Cart..");
+            cart = new Cart(promoEngine);
+            cart.AddItem(productA);
+            cart.AddItem(productA);
+            cart.AddItem(productA);
+            cart.AddItem(productA);
+            cart.AddItem(productA);
+            cart.AddItem(productB);
+            cart.AddItem(productB);
+            cart.AddItem(productB);
+            cart.AddItem(productB);
+            cart.AddItem(productB);
+            cart.AddItem(productC);
+            PrintCartItems(cart);
+
+            Console.WriteLine($"\r\nCreating New Cart..");
+            cart = new Cart(promoEngine);
+            cart.AddItem(productA);
+            cart.AddItem(productA);
+            cart.AddItem(productA);
+            cart.AddItem(productB);
+            cart.AddItem(productB);
+            cart.AddItem(productB);
+            cart.AddItem(productB);
+            cart.AddItem(productB);
+            cart.AddItem(productC);
+            cart.AddItem(productD);
+            PrintCartItems(cart);
+
         }
 
         private static void PrintCartItems(Cart cart)
