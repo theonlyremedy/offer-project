@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace OfferConsole.Processor
+namespace OfferConsole
 {
     class ProductBPromo : IPromo
     {

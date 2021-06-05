@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace OfferConsole
@@ -10,7 +9,12 @@ namespace OfferConsole
         public bool IsEmpty { get; private set; }
 
         public List<CartItem> CartItems { get; private set; }
-        public int CartValue { get { return promoEngine.ComputeCartValue(CartItems); }  }
+        public int CartValue {
+            get {
+                promoEngine.ApplyPromo(CartItems);
+                return CartItems.Sum(x => x.SellingPrice);
+            }
+        }
 
         public Cart(PromoEngine promoEngine)
         {

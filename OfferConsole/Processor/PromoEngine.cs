@@ -5,11 +5,24 @@ namespace OfferConsole
 {
     public class PromoEngine
     {
-        
+        List<IPromo> promoList = null;
 
-        internal int ComputeCartValue(List<CartItem> cartItems)
+        public PromoEngine()
         {
-            throw new NotImplementedException();
+            promoList = new List<IPromo>()
+            {
+               new ProductAPromo(),
+               new ProductBPromo(),
+               new ProductCDPromo()
+            };
+        }
+
+        internal void ApplyPromo(List<CartItem> cartItems)
+        {
+            foreach(IPromo promo in promoList)
+            {
+                promo.ProcessCart(cartItems);
+            }
         }
     }
 }
