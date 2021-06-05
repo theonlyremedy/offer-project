@@ -27,20 +27,13 @@ namespace OfferConsole
             Product productC = ProductFactory.Instance.Create("C");
             Product productD = ProductFactory.Instance.Create("D");
 
-
-            cart.AddItem(productC);
-            cart.AddItem(productC);
-
-            cart.AddItem(productD);
-            cart.AddItem(productD);
-
-            cart.AddItem(productB);
-            cart.AddItem(productB);
+            cart.AddItem(productC, 2);
+            cart.AddItem(productD, 2);
+            cart.AddItem(productB, 2);
 
             PrintCartItems(cart);
 
-            cart.AddItem(productA);
-            cart.AddItem(productA);
+            cart.AddItem(productA, 2);
 
             PrintCartItems(cart);
 
@@ -58,33 +51,18 @@ namespace OfferConsole
 
             Console.WriteLine($"\r\nCreating New Cart..");
             cart = new Cart(promoEngine);
-            cart.AddItem(productA);
-            cart.AddItem(productA);
-            cart.AddItem(productA);
-            cart.AddItem(productA);
-            cart.AddItem(productA);
-            cart.AddItem(productB);
-            cart.AddItem(productB);
-            cart.AddItem(productB);
-            cart.AddItem(productB);
-            cart.AddItem(productB);
+            cart.AddItem(productA, 5);
+            cart.AddItem(productB, 5);
             cart.AddItem(productC);
             PrintCartItems(cart);
 
             Console.WriteLine($"\r\nCreating New Cart..");
             cart = new Cart(promoEngine);
-            cart.AddItem(productA);
-            cart.AddItem(productA);
-            cart.AddItem(productA);
-            cart.AddItem(productB);
-            cart.AddItem(productB);
-            cart.AddItem(productB);
-            cart.AddItem(productB);
-            cart.AddItem(productB);
+            cart.AddItem(productA, 3);
+            cart.AddItem(productB, 5);
             cart.AddItem(productC);
             cart.AddItem(productD);
             PrintCartItems(cart);
-
         }
 
         private static void PrintCartItems(Cart cart)

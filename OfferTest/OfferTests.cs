@@ -37,10 +37,7 @@ namespace OfferTest
             Cart cart = new Cart(promoEngine);
             
             Product product = ProductFactory.Instance.Create("B");
-            cart.AddItem(product);
-
-            Product product2 = ProductFactory.Instance.Create("B");
-            cart.AddItem(product2);
+            cart.AddItem(product, 2);
 
             CartItem cartItem = cart.CartItems.Where(x => x.Product.Label == product.Label).FirstOrDefault();
             Assert.AreEqual(2, cartItem.Quantity);
@@ -52,10 +49,7 @@ namespace OfferTest
             Cart cart = new Cart(promoEngine);
 
             Product product = ProductFactory.Instance.Create("A");
-            cart.AddItem(product);
-
-            Product product2 = ProductFactory.Instance.Create("A");
-            cart.AddItem(product2);
+            cart.AddItem(product, 2);
 
             CartItem cartItem = cart.CartItems.Where(x => x.Product.Label == product.Label).FirstOrDefault();
 
@@ -68,10 +62,7 @@ namespace OfferTest
             Cart cart = new Cart(promoEngine);
 
             Product product = ProductFactory.Instance.Create("B");
-            cart.AddItem(product);
-
-            Product product2 = ProductFactory.Instance.Create("B");
-            cart.AddItem(product2);
+            cart.AddItem(product, 2);
 
             CartItem cartItem = cart.CartItems.Where(x => x.Product.Label == product.Label).FirstOrDefault();
             Assert.AreEqual(45, cart.CartValue);

@@ -49,16 +49,17 @@ namespace OfferConsole
         /// <summary>
         /// Adds the specified Product into the Cart
         /// </summary>
-        public void AddItem(Product product)
+        public void AddItem(Product product, int quantity = 1)
         {
             CartItem cartItem = CartItems.FirstOrDefault(x => x.Product.Label == product.Label);
             if (cartItem == null)
             {
                 cartItem = new CartItem(product);
+                cartItem.Quantity = quantity;
                 CartItems.Add(cartItem);
             }
             else
-                cartItem.Quantity++;
+                cartItem.Quantity += quantity;
 
             IsUpdated = false;
         }
